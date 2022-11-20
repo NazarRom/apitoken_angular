@@ -1,5 +1,21 @@
-<ul>
-    <li *ngFor="let emp of empleados">
-        {{emp.apellido}}
-    </li>
-</ul>
+<div *ngIf="empleados">
+    <table class="table table-info">
+        <thead>
+            <tr>
+                <th>Apellido</th>
+                <th>Oficio</th>
+                <th>Salario</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let emp of empleados">
+                <td>{{emp.apellido}}</td>
+                <td>{{emp.oficio}}</td>
+                <td>{{emp.salario}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div *ngIf="!empleados">
+<h1>Sorry papa no hay acceso</h1>
+</div>
