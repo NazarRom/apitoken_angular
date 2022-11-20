@@ -4,17 +4,21 @@ import { Empleado } from 'src/app/model/empleado';
 @Component({
   selector: 'app-plantilla',
   templateUrl: './plantilla.component.html',
-  styleUrls: ['./plantilla.component.css']
+  styleUrls: ['./plantilla.component.css'],
 })
 export class PlantillaComponent implements OnInit {
-public empleados !: Array<Empleado>;
-  constructor(private _service : PlantillaService) { }
+  public empleados!: Array<Empleado>;
+  public empleado!: Empleado;
+  constructor(private _service: PlantillaService) {}
 
   ngOnInit(): void {
-    this._service.getEmpleados().subscribe(res=>{
+    this.loadEmpleados();
+  }
+ 
+  loadEmpleados(): void {
+    this._service.getEmpleados().subscribe((res) => {
       console.log(res);
       this.empleados = res;
-    })
+    });
   }
-
 }

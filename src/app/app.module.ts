@@ -10,9 +10,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { PlantillaService } from './services/plantilla.service';
 import { PlantillaComponent } from './components/plantilla/plantilla.component';
+import { MiperfilComponent } from './components/miperfil/miperfil.component';
 
 @NgModule({
-  declarations: [AppComponent, MenuComponent, LoginComponent, HomeComponent, PlantillaComponent],
+  declarations: [AppComponent, MenuComponent, LoginComponent, HomeComponent, PlantillaComponent, MiperfilComponent],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [PlantillaService],
   bootstrap: [AppComponent],

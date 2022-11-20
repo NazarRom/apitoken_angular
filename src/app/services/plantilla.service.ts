@@ -22,4 +22,13 @@ export class PlantillaService {
     var url = environment.apiPlantilla + request;
     return this._http.get(url, { headers: header })
   }
+
+  getPerfilEmpleado():Observable<any> {
+    var token = localStorage.getItem('token');
+    var header = new HttpHeaders().set('Authorization', 'bearer ' + token);
+    var request = "/api/Empleados/PerfilEmpleado"
+    var url = environment.apiPlantilla + request;
+    return this._http.get(url, { headers: header })
+  }
 }
+
